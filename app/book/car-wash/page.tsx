@@ -39,17 +39,49 @@ export default function CarWashBooking() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
-      <div className="max-w-md w-full bg-white shadow-md rounded p-6 text-center">
+    <main className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div className="w-full max-w-md bg-white shadow-md rounded p-6 text-center">
         {!submitted ? (
           <>
             <img src="/images/car-wash.jpg" alt="Car Wash" className="rounded mb-4 w-full object-cover h-48" />
             <h1 className="text-2xl font-bold mb-4">Book a 🚗 Car Wash</h1>
-            <input type="text" placeholder="Your Name" value={name} onChange={(e) => setName(e.target.value)} className="w-full mb-3 p-2 border rounded" />
-            <input type="tel" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} className="w-full mb-3 p-2 border rounded" />
-            <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full mb-3 p-2 border rounded" />
-            <input type="time" value={time} onChange={(e) => setTime(e.target.value)} className="w-full mb-4 p-2 border rounded" />
-            <button onClick={handleBooking} className="bg-blue-500 text-white px-4 py-2 rounded w-full">Book Now</button>
+
+            <input
+              type="text"
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full mb-3 p-2 border rounded"
+              required
+            />
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="w-full mb-3 p-2 border rounded"
+              required
+            />
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              className="w-full mb-3 p-2 border rounded"
+              required
+            />
+            <input
+              type="time"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+              className="w-full mb-4 p-2 border rounded"
+              required
+            />
+            <button
+              onClick={handleBooking}
+              className="bg-blue-500 text-white px-4 py-2 rounded w-full hover:bg-blue-600"
+            >
+              Book Now
+            </button>
           </>
         ) : (
           <>
@@ -58,7 +90,12 @@ export default function CarWashBooking() {
               🚗 Car Wash on <strong>{date}</strong> at <strong>{time}</strong><br />
               for <strong>{name}</strong> (<strong>{phone}</strong>).
             </p>
-            <button onClick={() => setSubmitted(false)} className="text-sm text-gray-500 underline">Make Another Booking</button>
+            <button
+              onClick={() => setSubmitted(false)}
+              className="text-sm text-gray-500 underline"
+            >
+              Make Another Booking
+            </button>
           </>
         )}
       </div>

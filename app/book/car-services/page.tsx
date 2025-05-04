@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -43,7 +42,7 @@ export default function CarServicesBooking() {
       <div className="max-w-md w-full bg-white shadow-md rounded p-6 text-center">
         {!submitted ? (
           <>
-            <img src="/images/car-services.jpg" alt="Car Services" className="rounded mb-4 w-full object-cover h-48" />
+            <img src="/images/car-service.jpg" alt="Car Services" className="rounded mb-4 w-full object-cover h-48" />
             <h1 className="text-2xl font-bold mb-4">Book a 🛠️ Car Services</h1>
             <input type="text" placeholder="Your Name" value={name} onChange={(e) => setName(e.target.value)} className="w-full mb-3 p-2 border rounded" />
             <input type="tel" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} className="w-full mb-3 p-2 border rounded" />
