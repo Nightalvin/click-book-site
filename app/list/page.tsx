@@ -13,7 +13,9 @@ export default function ListPage() {
     description: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -23,7 +25,7 @@ export default function ListPage() {
     emailjs
       .send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        "template_1e47mwm", // ✅ HARDCODED TEMPLATE FOR 'List Your Business'
         {
           businessName: formData.businessName,
           contactPerson: formData.contactPerson,
